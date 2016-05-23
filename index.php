@@ -28,7 +28,7 @@
 				$.ajax({
 					method:"POST",
 					url:"prody_proses.php",
-					data:{name : name_prody},
+					data:{name : name_prody , type :"insert"},
 					success : function(data){
 						$("#data_prody").load("view.php");
 						$("#isi_prody").val("");
@@ -37,10 +37,27 @@
 				});
 			});
 
-			$(".btn-delete").on('click',function(){
-
+			$(document).on('click','.btn-delete',function(){
+				var id = $(this).attr('data-id');
 				//test ambil id
-				console.log($(this).attr('data-id'));
+				//console.log($(this).attr('data-id'));
+				$.ajax({
+					method:"POST",
+					url:"prody_proses.php",
+					data:{ id_prody : id , type : "delete"},
+					success : function(data){
+
+						if(data == 1 ){
+							$("#prody_"+id).fadeOut();
+
+						}
+						else if(data == 0)
+						{
+							alert("gagal delete");
+						}
+
+					}
+				});
 			});
 
 

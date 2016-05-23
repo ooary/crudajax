@@ -2,7 +2,7 @@
 		<?php
 			include "con.php";
 			$no=1;
-			$view = mysqli_query($con,"SELECT id,name FROM prody");
+			$view = mysqli_query($con,"SELECT id,name FROM prody order by id desc");
 
 
 		?>
@@ -22,7 +22,7 @@
 				<?php while(list($id,$prody)=mysqli_fetch_row($view)){
 				?>
 					
-				<tr >
+				<tr id="prody_<?=$id?>">
 					<td><?= $no++ ;?></td>
 					<td  ><?= $prody ;?></td>
 					<td><button type="button" class="btn-delete" data-id='<?=$id?>' onclick="return confirm('Delete ?');">Delete</button></td>
@@ -31,6 +31,6 @@
 				<?php } ?>
 				</tbody>
 
-			</table>
+			</table>	
 			
 			
