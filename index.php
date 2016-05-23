@@ -14,11 +14,14 @@
 	<input type="submit" id="btn_save" value="save">
 
 	<div id="data_prody">
-		
+
+			<?php include("view.php");?>
+
 
 	</div>
 
 	<script>
+	$(document).ready(function(){
 			$("#btn_save").on('click',function(){
 				//console.log($("#isi_prody").val());
 				var name_prody = $("#isi_prody").val();
@@ -27,11 +30,15 @@
 					url:"prody_proses.php",
 					data:{name : name_prody},
 					success : function(data){
-						console.log(data);
+						$("#data_prody").load("view.php");
 					}
 				});
 			});
 
+
+
+	});
+			
 	</script>
 </body>
 </html>

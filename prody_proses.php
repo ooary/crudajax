@@ -9,13 +9,5 @@
 
 	$query =mysqli_query($con,"INSERT INTO prody SET name = '$prody' ");
 
-	if($query){
-		echo "true!";
-	}
-	else{
-		echo "false";
-	}
-
-
-
 ?>
+
