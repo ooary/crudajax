@@ -26,13 +26,21 @@
 				//console.log($("#isi_prody").val());
 				var name_prody = $("#isi_prody").val();
 				$.ajax({
-					type:"POST",
+					method:"POST",
 					url:"prody_proses.php",
 					data:{name : name_prody},
 					success : function(data){
 						$("#data_prody").load("view.php");
+						$("#isi_prody").val("");
+
 					}
 				});
+			});
+
+			$(".btn-delete").on('click',function(){
+
+				//test ambil id
+				console.log($(this).attr('data-id'));
 			});
 
 

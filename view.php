@@ -17,18 +17,20 @@
 
 				</thead>
 				
+				<tbody id="table-data">
+
 				<?php while(list($id,$prody)=mysqli_fetch_row($view)){
 				?>
-				<tbody id="table-data">
 					
 				<tr >
 					<td><?= $no++ ;?></td>
 					<td  ><?= $prody ;?></td>
-					<td></td>
+					<td><button type="button" class="btn-delete" data-id='<?=$id?>' onclick="return confirm('Delete ?');">Delete</button></td>
 				</tr>
-				</tbody>
 
 				<?php } ?>
+				</tbody>
+
 			</table>
 			
 			
