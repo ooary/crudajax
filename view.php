@@ -24,8 +24,10 @@
 					
 				<tr id="prody_<?=$id?>">
 					<td><?= $no++ ;?></td>
-					<td  ><?= $prody ;?></td>
-					<td><button type="button" class="btn-delete" data-id='<?=$id?>' onclick="return confirm('Delete ?');">Delete</button></td>
+					<td class="isi_data" id="prodyId_<?=$id;?>" data-id='<?=$id;?>'><?= $prody ;?></td>
+					<td class="add_btn">
+						<button type="button" class="btn-delete" data-id='<?=$id;?>' onclick="return confirm('Delete ?');">Delete</button>
+					</td>
 				</tr>
 
 				<?php } ?>

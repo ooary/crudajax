@@ -17,6 +17,7 @@ if($_POST['type']=="delete")
 	//query
 
 	$query =mysqli_query($con,"DELETE FROM prody where id ='$id' ");
+	
 	if($query){
 		echo "1";
 	}
@@ -25,6 +26,23 @@ if($_POST['type']=="delete")
 		echo "0";
 	}
 endif;
+if($_POST['type']=="update")
+	:
+	$id = mysqli_real_escape_string($con,$_POST['id_prody']);
+	$isi = mysqli_real_escape_string($con,$_POST['isi_prody']);
+	//query
+
+	$query =mysqli_query($con,"UPDATE prody SET name='$isi' where id='$id'");
+	
+	if($query){
+		echo "1";
+	}
+	else
+	{
+		echo "0";
+	}
+endif;
+
 	
 ?>
 
